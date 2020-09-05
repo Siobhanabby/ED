@@ -1,0 +1,222 @@
+.hero{
+	background-image: url('../img/hero-banner.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+	height: 50vh;
+	max-height: 700px;
+	min-height: 450px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	flex-direction: column;
+	@media (min-width: $phone-breakpoint){
+		height: 95vh;
+		min-height: 600px;
+	}
+
+	.navigation{
+		display: flex;
+		position: absolute;
+		width: 100%;
+		z-index: 9;
+		top: 0;
+		left: 0;
+		height: auto;
+		padding: 20px;
+
+		@media (min-width: $phone-breakpoint){
+			padding: 30px 20px;
+		}
+
+		@media (min-width: $ipad-breakpoint){
+			background-color: transparent;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			padding: 30px 50px;
+		}
+
+		&__left {
+			display: flex;
+			flex-direction: column;
+			position: fixed;
+			background-color: $secondary-color;
+			top: 0;
+			width: 100vw;
+			height: 100vh;
+			padding-top: 100px;
+			right: -100vw;
+			transition: right 0.7s;
+
+			@media (min-width: $phone-breakpoint){
+				flex-direction: row;
+				background-color: transparent;
+				width: auto;
+				height: auto;
+				position: static;
+				padding-top: 0;
+			}
+		}
+
+		&__logo{
+			width: 70px;
+			z-index: 10;
+
+			img{
+				width: 100%;
+				height: auto;
+			}
+		}
+
+		&__menu {
+			margin: 0;
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			@media (min-width: $phone-breakpoint){
+				flex-direction: row;
+				margin: 0 20px;
+			}
+
+			@media (min-width: $ipad-breakpoint){
+				margin: 0 40px;
+			}
+
+			&--item {
+				margin: 10px 0;
+				@media (min-width: $phone-breakpoint){
+					margin: 0 10px;
+				}
+		
+				@media (min-width: $ipad-breakpoint){
+					margin: 0 30px;
+				}
+			}
+		}
+
+
+		&__hamburger{
+			z-index: 3;
+			display: block;
+			width: 20px;
+			height: 20px;
+			margin-right: 15px;
+			cursor: pointer;
+			margin: 0;
+
+			@media (min-width: $phone-breakpoint){
+				display: none;
+			}
+		}
+
+		.hamburger-open {
+			right: 0;
+			transition: right 1s;
+		}
+
+		.search-visible {
+			visibility: visible;
+		}
+
+		&__buttons {
+			display: flex;
+			align-items: center;
+			position: absolute;
+			right: 20px;
+
+			@media (min-width: $ipad-breakpoint){
+				right: 50px;
+			}
+
+			&--input {
+				visibility: hidden;
+				border: none;
+				width: 140px;
+				padding: 15px;
+				border-radius: 25px;
+				margin-right: -41px;
+			}
+
+			&--search {
+				background-color: $white;
+				padding: 10px;
+				border-radius: 25px;
+				margin-right: 10px; 
+				cursor: pointer;
+				@media (min-width: $phone-breakpoint){
+					margin-right: 0;
+				}
+			}
+
+			&--btn {
+				display: none;
+				@media (min-width: $phone-breakpoint){
+					display: block;
+				}
+			}
+		}
+	}
+
+	&__text {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		max-width: 100vw;
+
+		@media (min-width: $phone-breakpoint){
+			max-width: 95vw;
+		}
+
+		@media (min-width: $ipad-breakpoint){
+			max-width: 70vw;
+		}
+
+		&--eyebrow {
+			order: 0;
+			color: $white;
+			letter-spacing: 0.2em;
+		}
+
+		h1{
+			color: $white;
+			margin: 0 20px;
+			text-align: center;
+			font-size: 2em;
+			order: 1;
+			font-weight: 600;
+			@media (min-width: $phone-breakpoint){
+				margin: 0;
+				font-size: 3.4em;
+			}
+		}
+
+		&--para {
+			order: 2;
+			color: $white;
+			font-size: 1em;
+			margin: 15px 20px 30px;
+			line-height: 25px;
+			font-family: $bold-primary-font;
+
+			@media (min-width: $phone-breakpoint){
+				margin: 15px 80px 30px;
+				font-size: 1.3em;
+			}
+		}
+
+		a {
+			order: 3;
+		}
+	}
+
+	&__arrow {
+		position: absolute;
+		bottom: 10px;
+		left: calc(50% - 25px);
+		transform: rotate(90deg);
+	}
+}

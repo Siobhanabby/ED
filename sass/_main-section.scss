@@ -1,0 +1,94 @@
+.main-wrap{
+	margin-top: 50px;
+	@media (min-width: $ipad-breakpoint){
+		margin: 80px auto;
+		max-width: 1200px;
+	}
+}
+
+.top {
+	display: flex;
+	margin: 0 20px 80px;
+	align-items: center;
+	flex-direction: column-reverse;
+
+	@media (min-width: $phone-breakpoint){
+		flex-direction: row;
+	}
+
+	&__text {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		margin-right: 40px;
+		flex: 1;
+
+		.cta {
+			margin-left: 0;
+		}
+	}
+
+	&__image {
+		flex: 1;
+		img{
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+
+.bottom {
+	display: flex;
+	justify-content: center;
+	margin: 0 10px 0;
+	flex-wrap: wrap;
+
+	@media (min-width: $phone-breakpoint){
+		flex-wrap: nowrap;
+	}
+
+	a {
+		display: flex;
+	}
+
+	&__article {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		padding: 10px;
+
+		&--img {
+			max-width: 600px;
+			max-height: 200px;
+
+			@media (min-width: $phone-breakpoint){
+				max-width: 400px;
+				max-height: 150px;
+			}
+
+			@media (min-width: $ipad-breakpoint){
+				max-height: 200px;
+			}
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+
+		&--text {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+			margin: 10px 0;
+
+			@media (min-width: $ipad-breakpoint){
+				margin: 20px;
+			}
+		}
+	}
+}
